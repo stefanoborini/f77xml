@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+
+<apigen>
+	<signatures>
+		<sign type="p3t1">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="doc_documentElement" />
+				<function name="el_firstChild" />
+				<function name="el_lastChild" />
+				<function name="el_nextSibling" />
+				<function name="el_previousSibling" />
+				<function name="el_parentNode" />
+				<function name="el_childNodes" />
+				<function name="dom_createDocFromURI" />
+				<function name="el_tagName" />
+			</functionList>
+		</sign>
+
+		<sign type="p3t2">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="string *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="str_new" />
+			</functionList>
+		</sign>
+
+		<sign type="p3t3">
+			<parameterList>
+				<return type="unsigned int *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="str_len" />
+				<function name="nl_length" />
+				<function name="n_nodeType" />
+			</functionList>
+		</sign>
+
+		<sign type="p3t4">
+			<parameterList>
+				<return type="bool *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="el_hasChildNodes" />
+			</functionList>
+		</sign>
+
+		<sign type="p4t1">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="dom_saveDocToFile" />
+				<function name="doc_createElement" />
+				<function name="doc_createTextNode" />
+				<function name="doc_createComment" />
+				<function name="el_appendChild" />
+				<function name="el_getAttribute" />
+				<function name="el_removeAttribute" />
+				<function name="el_getElementsByTagName" />
+			</functionList>
+		</sign>
+
+		<sign type="p4t2">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="unsigned int *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="nl_item" />
+			</functionList>
+		</sign>
+		
+		<sign type="p4t3">
+			<parameterList>
+				<return type="bool *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="el_hasAttribute" />
+			</functionList>
+		</sign>
+
+		<sign type="p5t1">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="el_setAttribute" />
+				<function name="doc_createElementNS" />
+			</functionList>
+		</sign>
+
+		<sign type="p5t2">
+			<parameterList>
+				<return type="bool *" />
+				<parameter type="code *" />
+				<parameter type="string *" />
+				<parameter type="unsigned int *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="str_toFortran" />
+			</functionList>
+		</sign>
+
+
+	</signatures>
+</apigen>

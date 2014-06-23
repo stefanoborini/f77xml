@@ -1,0 +1,13 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+
+Name: f77xml
+Description: F77/90 wrapper to gdome2
+Version: @VERSION@
+Requires: gdome2 >= @GDOME2_MIN_VERSION@
+Libs: -L${libdir} -lf77xml
+Cflags: -I${includedir}/libf77xml
+

@@ -1,0 +1,461 @@
+   void               el_normalize              Element  
+   unsigned short     el_nodeType            Element  
+   Node         el_cloneNode              Element  Boolean 
+   Boolean       el_isSupported           Element  DOMString DOMString  
+   Boolean       el_canAppend             Element  Node  
+   Boolean       el_hasAttributeNS        Element  DOMString DOMString 
+   Boolean       n_isSupported            Node  DOMString DOMString
+   Boolean       n_canAppend              Node  Node 
+   unsigned short     n_nodeType             Node  
+   NamedNodeMap n_attributes       Node  
+   Node         n_cloneNode               Node  Boolean 
+   void               n_normalize               Node  
+   void               n_set_prefix              Node  DOMString 
+   void               n_set_nodeValue           Node  DOMString 
+   gulong             c_length                  Comment  
+   DOMString    c_substringData       Comment  gulong gulong 
+   void               c_set_data                Comment  DOMString 
+   void               c_appendData              Comment  DOMString 
+   void               c_insertData              Comment  gulong DOMString 
+   void               c_deleteData              Comment  gulong gulong 
+   void               c_replaceData             Comment  gulong gulong DOMString 
+   void               c_set_nodeValue           Comment  DOMString 
+   void               c_normalize               Comment  
+   void               c_set_prefix              Comment  DOMString 
+   unsigned short     c_nodeType             Comment  
+   NamedNodeMap c_attributes       Comment  
+   Node         c_insertBefore            Comment  Node Node 
+   Node         c_replaceChild            Comment  Node Node 
+   Node         c_removeChild             Comment  Node 
+   Node         c_appendChild             Comment  Node 
+   Node         c_cloneNode               Comment  Boolean 
+   Boolean       c_hasAttributes          Comment  
+   Boolean       c_hasChildNodes          Comment  
+   Boolean       c_canAppend              Comment  Node 
+   DocumentType          doc_doctype        Document  
+   DOMImplementation     doc_implementation Document  
+   DocumentFragment      doc_createDocumentFragment Document  
+   CDATASection          doc_createCDATASection Document  DOMString 
+   ProcessingInstruction doc_createProcessingInstruction Document  DOMString DOMString 
+   Attr                  doc_createAttribute       Document  DOMString 
+   EntityReference       doc_createEntityReference Document  DOMString 
+   NodeList              doc_getElementsByTagName Document  DOMString 
+   Node                  doc_importNode            Document  Node Boolean 
+   Attr                  doc_createAttributeNS     Document  DOMString DOMString 
+   NodeList              doc_getElementsByTagNameNS Document  DOMString DOMString 
+   Element               doc_getElementById      Document  DOMString 
+   DOMString             doc_nodeName          Document self 
+   DOMString             doc_nodeValue         Document self 
+   void                        doc_set_nodeValue         Document  DOMString 
+   unsigned short              doc_nodeType           Document  
+   Node                  doc_parentNode            Document self 
+   NodeList              doc_childNodes         Document self 
+   Node                  doc_firstChild            Document self 
+   Node                  doc_lastChild             Document self 
+   Node                  doc_previousSibling       Document self 
+   Node                  doc_nextSibling           Document self 
+   NamedNodeMap          doc_attributes     Document self 
+   Document              doc_ownerDocument      Document self 
+   Node                  doc_insertBefore          Document self Node Node 
+   Node                  doc_replaceChild          Document self Node Node 
+   Node                  doc_removeChild           Document self Node 
+   Node                  doc_appendChild           Document self Node 
+   Boolean                doc_hasChildNodes        Document self 
+   Node                  doc_cloneNode             Document self Boolean 
+   void                        doc_normalize             Document  
+   Boolean                doc_isSupported          Document self DOMString DOMString 
+   DOMString             doc_namespaceURI      Document self 
+   DOMString             doc_prefix            Document self 
+   void                        doc_set_prefix            Document  DOMString 
+   DOMString             doc_localName         Document self 
+   Boolean                doc_hasAttributes        Document self 
+   void                        doc_addEventListener      Document  DOMString EventListener Boolean 
+   void                        doc_removeEventListener   Document  DOMString EventListener Boolean 
+   Boolean                doc_dispatchEvent        Document self Event 
+   void                        doc_subTreeDispatchEvent  Document  Event 
+   Boolean                doc_canAppend            Document self Node 
+  Text  t_splitText               Text  gulong 
+  DOMString t_data                Text  
+  void        t_set_data                Text  DOMString 
+  gulong      t_length                  Text  
+  DOMString t_substringData       Text  gulong gulong 
+  void        t_appendData              Text  DOMString 
+  void        t_insertData              Text  gulong DOMString 
+  void        t_deleteData              Text  gulong gulong 
+  void        t_replaceData             Text  gulong gulong DOMString 
+  void        t_ref                     Text  
+  void        t_unref                   Text  
+  gpointer    t_query_interface         Text  const char 
+  DOMString t_nodeName            Text  
+  DOMString t_nodeValue           Text  
+  void        t_set_nodeValue           Text  DOMString 
+  unsigned short t_nodeType             Text  
+  Node  t_parentNode              Text  
+  NodeList t_childNodes           Text  
+  Node  t_firstChild              Text  
+  Node  t_lastChild               Text  
+  Node  t_previousSibling         Text  
+  Node  t_nextSibling             Text  
+  NamedNodeMap t_attributes       Text  
+  Document t_ownerDocument        Text  
+  Node  t_insertBefore            Text  Node Node 
+  Node  t_replaceChild            Text  Node Node 
+  Node  t_removeChild             Text  Node 
+  Node  t_appendChild             Text  Node 
+  Boolean t_hasChildNodes          Text  
+  Node  t_cloneNode               Text  Boolean 
+  void        t_normalize               Text  
+  Boolean t_isSupported            Text  DOMString DOMString 
+  DOMString t_namespaceURI        Text  
+  DOMString t_prefix              Text  
+  void        t_set_prefix              Text  DOMString 
+  DOMString t_localName           Text  
+  Boolean t_hasAttributes          Text  
+  void        t_addEventListener        Text  DOMString EventListener Boolean 
+  void        t_removeEventListener     Text  DOMString EventListener Boolean 
+  Boolean t_dispatchEvent          Text  Event 
+  void        t_subTreeDispatchEvent    Text  Event 
+  void        a_ref                      Attr   
+  void        a_unref                    Attr   
+  gpointer    a_query_interface          Attr   const char 
+  DOMString  a_name                 Attr   
+  Element  a_ownerElement           Attr   
+  Boolean  a_specified               Attr   
+  DOMString  a_value                Attr   
+  void        a_set_value                Attr   DOMString  
+  DOMString  a_nodeName             Attr   
+  DOMString  a_nodeValue            Attr   
+  void        a_set_nodeValue            Attr   DOMString  
+  unsigned short a_nodeType              Attr   
+  Node   a_parentNode               Attr   
+  NodeList  a_childNodes            Attr   
+  Node   a_firstChild               Attr   
+  Node   a_lastChild                Attr   
+  Node   a_previousSibling          Attr   
+  Node   a_nextSibling              Attr   
+  NamedNodeMap  a_attributes        Attr   
+  Document  a_ownerDocument         Attr   
+  Node   a_insertBefore             Attr   Node  Node  
+  Node   a_replaceChild             Attr   Node  Node  
+  Node   a_removeChild              Attr   Node  
+  Node   a_appendChild              Attr   Node  
+  Boolean  a_hasChildNodes           Attr   
+  Node   a_cloneNode                Attr   Boolean  
+  void        a_normalize                Attr   
+  Boolean  a_isSupported             Attr   DOMString  DOMString  
+  DOMString  a_namespaceURI         Attr   
+  DOMString  a_prefix               Attr   
+  void        a_set_prefix               Attr   DOMString  
+  DOMString  a_localName            Attr   
+  Boolean  a_hasAttributes           Attr   
+  void        a_addEventListener         Attr   DOMString  EventListener  Boolean  
+  void        a_removeEventListener      Attr   DOMString  EventListener  Boolean  
+  Boolean  a_dispatchEvent           Attr   Event  
+  void        a_subTreeDispatchEvent     Attr   Event  
+  Boolean  a_canAppend               Attr   Node  
+  Text   cds_splitText              CDATASection   gulong 
+  DOMString  cds_data               CDATASection   
+  void        cds_set_data               CDATASection   DOMString  
+  gulong      cds_length                 CDATASection   
+  DOMString  cds_substringData      CDATASection   gulong gulong 
+  void        cds_appendData             CDATASection   DOMString  
+  void        cds_insertData             CDATASection   gulong DOMString  
+  void        cds_deleteData             CDATASection   gulong gulong 
+  void        cds_replaceData            CDATASection   gulong gulong DOMString  
+  void        cds_ref                    CDATASection   
+  void        cds_unref                  CDATASection   
+  gpointer    cds_query_interface        CDATASection   const char 
+  DOMString  cds_nodeName           CDATASection   
+  DOMString  cds_nodeValue          CDATASection   
+  void        cds_set_nodeValue          CDATASection   DOMString  
+  unsigned short cds_nodeType            CDATASection   
+  Node   cds_parentNode             CDATASection   
+  NodeList  cds_childNodes          CDATASection   
+  Node   cds_firstChild             CDATASection   
+  Node   cds_lastChild              CDATASection   
+  Node   cds_previousSibling        CDATASection   
+  Node   cds_nextSibling            CDATASection   
+  NamedNodeMap  cds_attributes      CDATASection   
+  Document  cds_ownerDocument       CDATASection   
+  Node   cds_insertBefore           CDATASection   Node  Node  
+  Node   cds_replaceChild           CDATASection   Node  Node  
+  Node   cds_removeChild            CDATASection   Node  
+  Node   cds_appendChild            CDATASection   Node  
+  Boolean  cds_hasChildNodes         CDATASection   
+  Node   cds_cloneNode              CDATASection   Boolean  
+  void        cds_normalize              CDATASection   
+  Boolean  cds_isSupported           CDATASection   DOMString  DOMString  
+  DOMString  cds_namespaceURI       CDATASection   
+  DOMString  cds_prefix             CDATASection   
+  void        cds_set_prefix             CDATASection   DOMString  
+  DOMString  cds_localName          CDATASection   
+  Boolean  cds_hasAttributes         CDATASection   
+  void        cds_addEventListener       CDATASection   DOMString  EventListener  Boolean  
+  void        cds_removeEventListener    CDATASection   DOMString  EventListener  Boolean  
+  Boolean  cds_dispatchEvent         CDATASection   Event  
+  void        cds_subTreeDispatchEvent   CDATASection   Event  
+  Boolean  cds_canAppend             CDATASection   Node  
+  gdomeDOMString  cd_data                CharacterData   
+  void        cd_set_data                CharacterData   DOMString  
+  gulong      cd_length                  CharacterData   
+  DOMString  cd_substringData       CharacterData   gulong gulong 
+  void        cd_appendData              CharacterData   DOMString  
+  void        cd_insertData              CharacterData   gulong DOMString  
+  void        cd_deleteData              CharacterData   gulong gulong 
+  void        cd_replaceData             CharacterData   gulong gulong DOMString  
+  void        cd_ref                     CharacterData   
+  void        cd_unref                   CharacterData   
+  gpointer    cd_query_interface         CharacterData   const char 
+  DOMString  cd_nodeName            CharacterData   
+  DOMString  cd_nodeValue           CharacterData   
+  void        cd_set_nodeValue           CharacterData   DOMString  
+  unsigned short cd_nodeType             CharacterData   
+  Node   cd_parentNode              CharacterData   
+  NodeList  cd_childNodes           CharacterData   
+  Node   cd_firstChild              CharacterData   
+  Node   cd_lastChild               CharacterData   
+  Node   cd_previousSibling         CharacterData   
+  Node   cd_nextSibling             CharacterData   
+  NamedNodeMap  cd_attributes       CharacterData   
+  Document  cd_ownerDocument        CharacterData   
+  Node   cd_insertBefore            CharacterData   Node  Node  
+  Node   cd_replaceChild            CharacterData   Node  Node  
+  Node   cd_removeChild             CharacterData   Node  
+  Node   cd_appendChild             CharacterData   Node  
+  Boolean  cd_hasChildNodes          CharacterData   
+  Node   cd_cloneNode               CharacterData   Boolean  
+  void        cd_normalize               CharacterData   
+  Boolean  cd_isSupported            CharacterData   DOMString  DOMString  
+  DOMString  cd_namespaceURI        CharacterData   
+  DOMString  cd_prefix              CharacterData   
+  void        cd_set_prefix              CharacterData   DOMString  
+  DOMString  cd_localName           CharacterData   
+  Boolean  cd_hasAttributes          CharacterData   
+  void        cd_addEventListener        CharacterData   DOMString  EventListener  Boolean  
+  void        cd_removeEventListener     CharacterData   DOMString  EventListener  Boolean  
+  Boolean  cd_dispatchEvent          CharacterData   Event  
+  void        cd_subTreeDispatchEvent    CharacterData   Event  
+  Boolean  cd_canAppend              CharacterData   Node  
+  DOMString  pi_target              ProcessingInstruction   
+  DOMString  pi_data                ProcessingInstruction   
+  void        pi_set_data                ProcessingInstruction   DOMString  
+  gpointer    pi_query_interface         ProcessingInstruction   const char 
+  DOMString  pi_nodeName            ProcessingInstruction   
+  DOMString  pi_nodeValue           ProcessingInstruction   
+  void        pi_set_nodeValue           ProcessingInstruction   DOMString  
+  unsigned short pi_nodeType             ProcessingInstruction   
+  Node   pi_parentNode              ProcessingInstruction   
+  NodeList  pi_childNodes           ProcessingInstruction   
+  Node   pi_firstChild              ProcessingInstruction   
+  Node   pi_lastChild               ProcessingInstruction   
+  Node   pi_previousSibling         ProcessingInstruction   
+  Node   pi_nextSibling             ProcessingInstruction   
+  NamedNodeMap  pi_attributes       ProcessingInstruction   
+  Document  pi_ownerDocument        ProcessingInstruction   
+  Node   pi_insertBefore            ProcessingInstruction   Node  Node  
+  Node   pi_replaceChild            ProcessingInstruction   Node  Node  
+  Node   pi_removeChild             ProcessingInstruction   Node  
+  Node   pi_appendChild             ProcessingInstruction   Node  
+  Boolean  pi_hasChildNodes          ProcessingInstruction   
+  Node   pi_cloneNode               ProcessingInstruction   Boolean  
+  void        pi_normalize               ProcessingInstruction   
+  Boolean  pi_isSupported            ProcessingInstruction   DOMString  DOMString  
+  DOMString  pi_namespaceURI        ProcessingInstruction   
+  DOMString  pi_prefix              ProcessingInstruction   
+  void        pi_set_prefix              ProcessingInstruction   DOMString  
+  DOMString  pi_localName           ProcessingInstruction   
+  Boolean  pi_hasAttributes          ProcessingInstruction   
+  Boolean  pi_canAppend              ProcessingInstruction   Node  
+  gpointer    df_query_interface         DocumentFragment   const char 
+  DOMString  df_nodeName            DocumentFragment   
+  DOMString  df_nodeValue           DocumentFragment   
+  void        df_set_nodeValue           DocumentFragment   DOMString  
+  unsigned short df_nodeType             DocumentFragment   
+  Node   df_parentNode              DocumentFragment   
+  NodeList  df_childNodes           DocumentFragment   
+  Node   df_firstChild              DocumentFragment   
+  Node   df_lastChild               DocumentFragment   
+  Node   df_previousSibling         DocumentFragment   
+  Node   df_nextSibling             DocumentFragment   
+  NamedNodeMap  df_attributes       DocumentFragment   
+  Document  df_ownerDocument        DocumentFragment   
+  Node   df_insertBefore            DocumentFragment   Node  Node  
+  Node   df_replaceChild            DocumentFragment   Node  Node  
+  Node   df_removeChild             DocumentFragment   Node  
+  Node   df_appendChild             DocumentFragment   Node  
+  Boolean  df_hasChildNodes          DocumentFragment   
+  Node   df_cloneNode               DocumentFragment   Boolean  
+  void        df_normalize               DocumentFragment   
+  Boolean  df_isSupported            DocumentFragment   DOMString  DOMString  
+  DOMString  df_namespaceURI        DocumentFragment   
+  DOMString  df_prefix              DocumentFragment   
+  void        df_set_prefix              DocumentFragment   DOMString  
+  DOMString  df_localName           DocumentFragment   
+  Boolean  df_hasAttributes          DocumentFragment   
+  Boolean  df_canAppend              DocumentFragment   Node  
+  DOMString  not_publicId           Notation   
+  DOMString  not_systemId           Notation   
+  DOMString  not_nodeName           Notation   
+  DOMString  not_nodeValue          Notation   
+  void        not_set_nodeValue          Notation   DOMString  
+  unsigned short not_nodeType            Notation   
+  Node   not_parentNode             Notation   
+  NodeList  not_childNodes          Notation   
+  Node   not_firstChild             Notation   
+  Node   not_lastChild              Notation   
+  Node   not_previousSibling        Notation   
+  Node   not_nextSibling            Notation   
+  NamedNodeMap  not_attributes      Notation   
+  Document  not_ownerDocument       Notation   
+  Node   not_insertBefore           Notation   Node  Node  
+  Node   not_replaceChild           Notation   Node  Node  
+  Node   not_removeChild            Notation   Node  
+  Node   not_appendChild            Notation   Node  
+  Boolean  not_hasChildNodes         Notation   
+  Node   not_cloneNode              Notation   Boolean  
+  void        not_normalize              Notation   
+  Boolean  not_isSupported           Notation   DOMString  DOMString  
+  DOMString  not_namespaceURI       Notation   
+  DOMString  not_prefix             Notation   
+  void        not_set_prefix             Notation   DOMString  
+  DOMString  not_localName          Notation   
+  Boolean  not_hasAttributes         Notation   
+  Boolean  not_canAppend             Notation   Node  
+  DOMString  dt_name                DocumentType   
+  NamedNodeMap  dt_entities         DocumentType   
+  NamedNodeMap  dt_notations        DocumentType   
+  DOMString  dt_publicId            DocumentType   
+  DOMString  dt_systemId            DocumentType   
+  DOMString  dt_internalSubset      DocumentType   
+  void        dt_ref                     DocumentType   
+  void        dt_unref                   DocumentType   
+  gpointer    dt_query_interface         DocumentType   const char 
+  DOMString  dt_nodeName            DocumentType   
+  DOMString  dt_nodeValue           DocumentType   
+  void        dt_set_nodeValue           DocumentType   DOMString  
+  unsigned short dt_nodeType             DocumentType   
+  Node   dt_parentNode              DocumentType   
+  NodeList  dt_childNodes           DocumentType   
+  Node   dt_firstChild              DocumentType   
+  Node   dt_lastChild               DocumentType   
+  Node   dt_previousSibling         DocumentType   
+  Node   dt_nextSibling             DocumentType   
+  NamedNodeMap  dt_attributes       DocumentType   
+  Document  dt_ownerDocument        DocumentType   
+  Node   dt_insertBefore            DocumentType   Node  Node  
+  Node   dt_replaceChild            DocumentType   Node  Node  
+  Node   dt_removeChild             DocumentType   Node  
+  Node   dt_appendChild             DocumentType   Node  
+  Boolean  dt_hasChildNodes          DocumentType   
+  Node   dt_cloneNode               DocumentType   Boolean  
+  void        dt_normalize               DocumentType   
+  Boolean  dt_isSupported            DocumentType   DOMString  DOMString  
+  DOMString  dt_namespaceURI        DocumentType   
+  DOMString  dt_prefix              DocumentType   
+  void        dt_set_prefix              DocumentType   DOMString  
+  DOMString  dt_localName           DocumentType   
+  Boolean  dt_hasAttributes          DocumentType   
+  void        dt_addEventListener        DocumentType   DOMString  EventListener  Boolean  
+  void        dt_removeEventListener     DocumentType   DOMString  EventListener  Boolean  
+  Boolean  dt_dispatchEvent          DocumentType   Event  
+  void        dt_subTreeDispatchEvent    DocumentType   Event  
+  Boolean  dt_canAppend              DocumentType   Node  
+  DOMImplementation  di_mkref       void
+  void        di_ref                     DOMImplementation   
+  void        di_unref                   DOMImplementation   
+  gpointer    di_query_interface         DOMImplementation   const char 
+  Boolean  di_hasFeature             DOMImplementation   DOMString  DOMString  
+  DocumentType  di_createDocumentType DOMImplementation   DOMString  DOMString  DOMString  
+  Document  di_createDocument       DOMImplementation   DOMString  DOMString  DocumentType  
+  void        di_freeDoc                 DOMImplementation   Document  
+  Document  di_createDocFromURI     DOMImplementation   const char unsigned int 
+  Document  di_createDocFromMemory  DOMImplementation   char unsigned int 
+  Document  di_createDocFromURIWithEntitiesTable DOMImplementation   const char const EntitiesTableEntry  entityTable[], unsigned int 
+  Document  di_createDocFromMemoryWithEntitiesTable DOMImplementation   char const EntitiesTableEntry  entityTable[], unsigned int 
+  Boolean  di_saveDocToFile          DOMImplementation   Document  const char SavingCode  
+  Boolean  di_saveDocToFileEnc       DOMImplementation   Document  const char const char SavingCode  
+  Boolean  di_saveDocToMemory        DOMImplementation   Document  char SavingCode  
+  Boolean  di_saveDocToMemoryEnc     DOMImplementation   Document  char const char SavingCode  
+  void        di_enableEvent             DOMImplementation   Document  const char 
+  void        di_disableEvent            DOMImplementation   Document  const char 
+  Boolean  di_eventIsEnabled         DOMImplementation   Document  const char 
+  DOMString  ent_publicId           Entity   
+  DOMString  ent_systemId           Entity   
+  DOMString  ent_notationName       Entity   
+  void        ent_ref                    Entity   
+  void        ent_unref                  Entity   
+  gpointer    ent_query_interface        Entity   const char 
+  DOMString  ent_nodeName           Entity   
+  DOMString  ent_nodeValue          Entity   
+  void        ent_set_nodeValue          Entity   DOMString  
+  unsigned short ent_nodeType            Entity   
+  Node   ent_parentNode             Entity   
+  NodeList  ent_childNodes          Entity   
+  Node   ent_firstChild             Entity   
+  Node   ent_lastChild              Entity   
+  Node   ent_previousSibling        Entity   
+  Node   ent_nextSibling            Entity   
+  NamedNodeMap  ent_attributes      Entity   
+  Document  ent_ownerDocument       Entity   
+  Node   ent_insertBefore           Entity   Node  Node  
+  Node   ent_replaceChild           Entity   Node  Node  
+  Node   ent_removeChild            Entity   Node  
+  Node   ent_appendChild            Entity   Node  
+  Boolean  ent_hasChildNodes         Entity   
+  Node   ent_cloneNode              Entity   Boolean  
+  void        ent_normalize              Entity   
+  Boolean  ent_isSupported           Entity   DOMString  DOMString  
+  DOMString  ent_namespaceURI       Entity   
+  DOMString  ent_prefix             Entity   
+  void        ent_set_prefix             Entity   DOMString  
+  DOMString  ent_localName          Entity   
+  Boolean  ent_hasAttributes         Entity   
+  void        ent_addEventListener       Entity   DOMString  EventListener  Boolean  
+  void        ent_removeEventListener    Entity   DOMString  EventListener  Boolean  
+  Boolean  ent_dispatchEvent         Entity   Event  
+  void        ent_subTreeDispatchEvent   Entity   Event  
+  Boolean  ent_canAppend             Entity   Node  
+  void        er_ref                     EntityReference   
+  void        er_unref                   EntityReference   
+  gpointer    er_query_interface         EntityReference   const char 
+  DOMString  er_nodeName            EntityReference   
+  DOMString  er_nodeValue           EntityReference   
+  void        er_set_nodeValue           EntityReference   DOMString  
+  unsigned short er_nodeType             EntityReference   
+  Node   er_parentNode              EntityReference   
+  NodeList  er_childNodes           EntityReference   
+  Node   er_firstChild              EntityReference   
+  Node   er_lastChild               EntityReference   
+  Node   er_previousSibling         EntityReference   
+  Node   er_nextSibling             EntityReference   
+  NamedNodeMap  er_attributes       EntityReference   
+  Document  er_ownerDocument        EntityReference   
+  Node   er_insertBefore            EntityReference   Node  Node  
+  Node   er_replaceChild            EntityReference   Node  Node  
+  Node   er_removeChild             EntityReference   Node  
+  Node   er_appendChild             EntityReference   Node  
+  Boolean  er_hasChildNodes          EntityReference   
+  Node   er_cloneNode               EntityReference   Boolean  
+  void        er_normalize               EntityReference   
+  Boolean  er_isSupported            EntityReference   DOMString  DOMString  
+  DOMString  er_namespaceURI        EntityReference   
+  DOMString  er_prefix              EntityReference   
+  void        er_set_prefix              EntityReference   DOMString  
+  DOMString  er_localName           EntityReference   
+  Boolean  er_hasAttributes          EntityReference   
+  void        er_addEventListener        EntityReference   DOMString  EventListener  Boolean  
+  void        er_removeEventListener     EntityReference   DOMString  EventListener  Boolean  
+  Boolean  er_dispatchEvent          EntityReference   Event  
+  void        er_subTreeDispatchEvent    EntityReference   Event  
+  Boolean  er_canAppend              EntityReference   Node  
+  void        nnm_ref                    NamedNodeMap   
+  void        nnm_unref                  NamedNodeMap   
+  gpointer    nnm_query_interface        NamedNodeMap   const char 
+  Node   nnm_getNamedItem           NamedNodeMap   DOMString  
+  Node   nnm_setNamedItem           NamedNodeMap   Node  
+  Node   nnm_removeNamedItem        NamedNodeMap   DOMString  
+  Node   nnm_item                   NamedNodeMap   gulong 
+  gulong      nnm_length                 NamedNodeMap   
+  Node   nnm_getNamedItemNS         NamedNodeMap   DOMString  DOMString  
+  Node   nnm_setNamedItemNS         NamedNodeMap   Node  
+  Node   nnm_removeNamedItemNS      NamedNodeMap   DOMString  DOMString  

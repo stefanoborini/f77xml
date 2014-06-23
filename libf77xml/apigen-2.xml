@@ -1,0 +1,4897 @@
+<?xml version="1.0" ?>
+
+<apigen>
+	<templates>
+		<template name="p3t1_normal">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret, code *i_code1, error *o_err) { 
+	/* {{{ */
+	Gdome@returntype@ *ret;
+	Gdome@type1@ *obj1;
+	GdomeException exc;
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	ret = gdome_@funcname@ (obj1, &exc);
+
+	if (exc) {
+		assert(ret == NULL);
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_add@returntype@(cache, (gpointer)ret);
+
+	/* }}} */
+}
+]]>
+		</template>
+		<template name="p3t1_void">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret, code *i_code1, error *o_err) { 
+	/* {{{ */
+	Gdome@type1@ *obj1;
+	GdomeException exc;
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	gdome_@funcname@ (obj1, &exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	/* }}} */
+}
+]]>
+		</template>
+
+		<template name="p3t1_unref">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret, code *i_code1, error *o_err) { 
+	/* {{{ */
+	Gdome@type1@ *obj1;
+	GdomeException exc;
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	f77xml_Cache_remove@type1@(cache,obj1);
+
+	gdome_@funcname@ (obj1, &exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	/* }}} */
+}
+]]>
+		</template>
+
+
+		<template name="p3t3_normal">
+<![CDATA[
+private void f77xml__@funcname@(unsigned int *o_ret,
+				code *i_code1,
+				error *o_err) {
+
+	/* {{{ */
+	Gdome@type1@ *obj1;
+	GdomeException exc;
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	*o_err = ERR_NEVER_RETURN_THIS;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	*o_ret = gdome_@funcname@(obj1, &exc);
+	
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+	
+	/* }}} */
+
+}
+]]>
+		</template>
+
+		<template name="p3t4_normal">
+<![CDATA[
+private void f77xml__@funcname@(bool *o_ret,
+				code *i_code1,
+				error *o_err) {
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	GdomeException exc;
+
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	*o_err = ERR_NEVER_RETURN_THIS;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	*o_ret = gdome_@funcname@(obj1,&exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+	
+	/* }}} */
+
+}
+]]>
+		</template>
+		<template name="p4t1_normal">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				code *i_code2,
+				error *o_err) { 
+	/* {{{ OK */
+	Gdome@returntype@ *ret;
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_ret = NullCode;
+	*o_err = ERR_NEVER_RETURN_THIS;
+	
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	ret = gdome_@funcname@(obj1,obj2,&exc);
+	
+	if (exc) {
+		assert ( ret == NULL );
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_add@returntype@(cache, (gpointer)ret);
+
+	/* }}} */
+}
+]]>
+		</template>
+
+		<template name="p4t1_void">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				code *i_code2,
+				error *o_err) { 
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_ret = NullCode;
+	*o_err = ERR_NEVER_RETURN_THIS;
+	
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	gdome_@funcname@(obj1,obj2,&exc);
+	
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	/* }}} */
+}
+]]>
+		</template>
+		<template name="p4t2_normal">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				unsigned int *o_uint1,
+				error *o_err) {
+
+	/* {{{ OK */
+	Cache *cache;
+	Gdome@type1@ *obj1;
+	Gdome@returntype@ *ret;
+	GdomeException exc;
+
+	cache = f77xml_Cache_instance();
+	*o_err = ERR_NEVER_RETURN_THIS;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	ret = gdome_@funcname@(obj1,*o_uint1,&exc);
+
+	if (exc) {
+		assert (ret == NULL);
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_add@returntype@(cache, (gpointer)ret);
+
+	/* }}} */
+
+}
+]]>
+		</template>
+		<template name="p4t3_normal">
+<![CDATA[
+private void f77xml__@funcname@(bool *o_ret,
+					code *i_code1,
+					code *i_code2,
+					error *o_err) {
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	*o_ret = gdome_@funcname@(obj1,obj2,&exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+	
+	/* }}} */
+
+}
+]]>
+		</template>
+
+		<template name="p4t4_normal">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				bool *i_bool,
+				error *o_err) {
+
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	Gdome@returntype@ *ret;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+	*o_err = ERR_NEVER_RETURN_THIS;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	ret = gdome_@funcname@(obj1,*i_bool,&exc);
+
+	if (exc) {
+		assert (ret == NULL);
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_add@returntype@(cache, (gpointer)ret);
+
+	/* }}} */
+
+}
+]]>
+		</template>
+
+		<template name="p5t1_normal">
+<![CDATA[
+static void f77xml__@funcname@(code *o_ret,
+			code *i_code1,
+			code *i_code2,
+			code *i_code3,
+			error *o_err) { 
+	/* {{{ OK */
+	Gdome@returntype@ *ret;
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	Gdome@type3@ *obj3;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+	
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+	
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	obj3 = f77xml_Cache_get@type3@(cache, *i_code3, o_err);
+	if (obj3 == NULL) return;
+
+	ret = gdome_@funcname@(obj1,obj2,obj3,&exc);
+	
+	if (exc) {
+		assert (ret == NULL);
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_add@returntype@(cache, (gpointer)ret);
+
+	/* }}} */
+
+}
+]]>
+		</template>
+
+		<template name="p5t1_void">
+<![CDATA[
+static void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				code *i_code2,
+				code *i_code3,
+				error *o_err) { 
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	Gdome@type3@ *obj3;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+	
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+	
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	obj3 = f77xml_Cache_get@type3@(cache, *i_code3, o_err);
+	if (obj3 == NULL) return;
+
+	gdome_@funcname@(obj1,obj2,obj3,&exc);
+	
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	/* }}} */
+
+}
+]]>
+		</template>
+
+		<template name="p5t3_normal">
+<![CDATA[
+private void f77xml__@funcname@(bool *o_ret,
+				code *i_code1,
+				code *i_code2,
+				code *i_code3,
+				error *o_err) {
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	Gdome@type3@ *obj3;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	obj3 = f77xml_Cache_get@type3@(cache, *i_code2, o_err);
+	if (obj3 == NULL) return;
+
+	*o_ret = gdome_@funcname@(obj1,obj2,obj3,&exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+	
+	/* }}} */
+
+}
+]]>
+		</template>
+		<template name="p5t4_normal">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				unsigned int *o_uint1,
+				unsigned int *o_uint2,
+				error *o_err) {
+
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	Gdome@returntype@ *ret;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	ret = gdome_@funcname@(obj1,*o_uint1,*o_uint2,&exc);
+
+	if (exc) {
+		assert (ret == NULL);
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_add@returntype@(cache, (gpointer)ret);
+
+	/* }}} */
+
+}
+]]>
+		</template>
+		<template name="p5t4_void">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				unsigned int *o_uint1,
+				unsigned int *o_uint2,
+				error *o_err) {
+
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	gdome_@funcname@(obj1,*o_uint1,*o_uint2,&exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+	*o_ret = NullCode;
+
+	/* }}} */
+
+}
+]]>
+		</template>
+
+		<template name="p5t6_void">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				unsigned int *i_uint1,
+				code *i_code2,
+				error *o_err) {
+
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	gdome_@funcname@(obj1,*i_uint1,obj2,&exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+	*o_ret = NullCode;
+
+	/* }}} */
+
+}
+]]>
+		</template>
+
+		<template name="p6t1_normal">
+<![CDATA[
+static void f77xml__@funcname@(code *o_ret,
+			code *i_code1,
+			code *i_code2,
+			code *i_code3,
+			code *i_code4,
+			error *o_err) { 
+	/* {{{ OK */
+	Gdome@returntype@ *ret;
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	Gdome@type3@ *obj3;
+	Gdome@type4@ *obj4;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+	
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+	
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	obj3 = f77xml_Cache_get@type3@(cache, *i_code3, o_err);
+	if (obj3 == NULL) return;
+
+	obj4 = f77xml_Cache_get@type4@(cache, *i_code4, o_err);
+	if (obj4 == NULL) return;
+
+	ret = gdome_@funcname@(obj1,obj2,obj3,obj4,&exc);
+	
+	if (exc) {
+		assert (ret == NULL);
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_add@returntype@(cache, (gpointer)ret);
+
+	/* }}} */
+
+}
+]]>
+		</template>
+
+		<template name="p6t1_void">
+<![CDATA[
+static void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				code *i_code2,
+				code *i_code3,
+				code *i_code4,
+				error *o_err) { 
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	Gdome@type3@ *obj3;
+	Gdome@type4@ *obj4;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+	
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+	
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	obj3 = f77xml_Cache_get@type3@(cache, *i_code3, o_err);
+	if (obj3 == NULL) return;
+
+	obj4 = f77xml_Cache_get@type4@(cache, *i_code4, o_err);
+	if (obj4 == NULL) return;
+
+	gdome_@funcname@(obj1,obj2,obj3,obj4,&exc);
+	
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	/* }}} */
+
+}
+]]>
+		</template>
+		<template name="p6t3_void">
+<![CDATA[
+private void f77xml__@funcname@(code *o_ret,
+				code *i_code1,
+				unsigned int *i_uint1,
+				unsigned int *i_uint2,
+				code *i_code2,
+				error *o_err) {
+
+	/* {{{ OK */
+	Gdome@type1@ *obj1;
+	Gdome@type2@ *obj2;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+
+	obj1 = f77xml_Cache_get@type1@(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	obj2 = f77xml_Cache_get@type2@(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	gdome_@funcname@(obj1,*i_uint1,*i_uint2,obj2,&exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+	*o_ret = NullCode;
+
+	/* }}} */
+
+}
+]]>
+		</template>
+
+	</templates>
+
+	<signatures>
+		<sign type="p2t1">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="di_mkref">
+					<implementation>
+<![CDATA[
+static void f77xml__di_mkref(code *o_ret,
+			error *o_err) { 
+	/* {{{ OK */
+	GdomeDOMImplementation *di;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+	
+	di = gdome_di_mkref();
+	*o_err = ERR_NO_ERROR;
+	*o_ret = f77xml_Cache_addDOMImplementation(cache, (gpointer)di);
+
+	/* }}} */
+
+}
+]]>
+					</implementation>
+				</function>
+				<function name="debug_dumpCache">
+					<implementation>
+<![CDATA[
+static void f77xml__debug_dumpCache(code *o_ret,
+			error *o_err) { 
+	/* {{{ OK */
+	Cache *cache = f77xml_Cache_instance();
+
+	f77xml_Cache_dumpStatus(cache);
+	*o_err = ERR_NO_ERROR;
+	*o_ret = NullCode;
+
+	/* }}} */
+
+}
+]]>
+					</implementation>
+				</function>
+				<function name="Cache_flush">
+					<implementation>
+<![CDATA[
+static void f77xml__Cache_flush(code *o_ret,
+			error *o_err) { 
+	/* {{{ OK */
+	Cache *cache = f77xml_Cache_instance();
+
+	f77xml_Cache_flush(cache);
+	*o_err = ERR_NO_ERROR;
+	*o_ret = NullCode;
+
+	/* }}} */
+
+}
+]]>
+					</implementation>
+				</function>
+				<function name="xpeval_mkref">
+					<implementation>
+<![CDATA[
+static void f77xml__xpeval_mkref(code *o_ret,
+			error *o_err) { 
+	/* {{{ OK */
+	GdomeXPathEvaluator *eval;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_ret = ERR_NEVER_RETURN_THIS;
+	
+	eval = gdome_xpeval_mkref();
+
+	*o_err = ERR_NO_ERROR;
+	*o_ret = f77xml_Cache_addXPathEvaluator(cache, (gpointer)eval);
+
+	/* }}} */
+
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+		<sign type="p3t1">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="doc_documentElement">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_documentElement" />
+						<subs search="@returntype@" replace="Element" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="doc_implementation">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_implementation" />
+						<subs search="@returntype@" replace="DOMImplementation" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="el_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="el_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="el_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="el_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="el_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="er_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+
+
+				<function name="pi_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="pi_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="pi_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="pi_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+
+				<function name="pi_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+
+
+				<function name="cd_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="cd_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="cd_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="cd_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="cd_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+
+				<function name="cds_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="not_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="not_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="not_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="not_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="not_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+
+				<function name="t_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="t_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="t_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="t_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="t_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="doc_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="doc_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="doc_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="doc_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="doc_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="el_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="er_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="cds_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="t_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="doc_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="a_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="el_tagName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_tagName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="el_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="n_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="ent_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="c_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="doc_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="er_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="not_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="df_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="cds_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="a_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="t_nodeName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_nodeName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="el_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="df_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="t_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="doc_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="cds_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="el_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="el_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="el_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="er_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="n_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="ent_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="doc_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="t_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="a_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="cds_ownerDocument">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_ownerDocument" />
+						<subs search="@returntype@" replace="Document" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+
+				<function name="el_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="er_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="cds_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="a_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="doc_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="el_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="el_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="pi_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="a_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="t_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="doc_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="n_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+
+				<function name="er_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="er_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="er_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="er_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+
+
+
+				<function name="df_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="df_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="df_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="df_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+
+				<function name="dt_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="dt_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="dt_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="dt_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+
+
+				<function name="cds_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="cds_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="cds_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="cds_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="n_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_data">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_data" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="pi_data">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_data" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_data">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_data" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="cds_data">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_data" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="t_data">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_data" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="c_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="n_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="n_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="er_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="cds_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="doc_createDocumentFragment">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_createDocumentFragment" />
+						<subs search="@returntype@" replace="DocumentFragment" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="el_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="el_normalize" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="er_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="er_normalize" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="dt_normalize" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="df_normalize" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="pi_normalize" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="cd_normalize" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="not_normalize" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="cds_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="cds_normalize" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="a_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="a_normalize" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="t_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="t_normalize" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="doc_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="doc_normalize" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="n_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="n_normalize" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="c_normalize" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="ent_normalize">
+					<implementation template="p3t1_void">
+						<subs search="@funcname@" replace="ent_normalize" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="c_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="c_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="doc_doctype">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_doctype" />
+						<subs search="@returntype@" replace="DocumentType" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="ent_publicId">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_publicId" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_systemId">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_systemId" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="dt_publicId">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_publicId" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="dt_systemId">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_systemId" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="dt_internalSubset">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_internalSubset" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="not_publicId">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_publicId" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="not_systemId">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_systemId" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="ent_notationName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_notationName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="er_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="ent_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_childNodes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_childNodes" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_attributes">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_attributes" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="er_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="cds_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="a_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="t_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="doc_namespaceURI">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_namespaceURI" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="ent_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="er_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="er_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="df_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cd_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="not_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="cds_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="cds_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="a_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="t_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="doc_prefix">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="doc_prefix" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="ent_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="ent_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="t_localName">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="t_localName" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="a_name">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_name" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="a_ownerElement">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_ownerElement" />
+						<subs search="@returntype@" replace="Element" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="a_value">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_value" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="a_nodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_nodeValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="a_firstChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_firstChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="a_lastChild">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_lastChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="a_nextSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_nextSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="a_previousSibling">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_previousSibling" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="a_parentNode">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="a_parentNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="pi_target">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="pi_target" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="dt_name">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_name" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="dt_entities">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_entities" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="dt_notations">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="dt_notations" />
+						<subs search="@returntype@" replace="NamedNodeMap" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="xpresult_singleNodeValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="xpresult_singleNodeValue" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="XPathResult" />
+					</implementation>
+				</function>
+				<function name="xpresult_iterateNext">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="xpresult_iterateNext" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="XPathResult" />
+					</implementation>
+				</function>
+				<function name="xpresult_stringValue">
+					<implementation template="p3t1_normal">
+						<subs search="@funcname@" replace="xpresult_stringValue" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="XPathResult" />
+					</implementation>
+				</function>
+				<function name="n_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="n_unref" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="el_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="el_unref" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="t_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="t_unref" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="cd_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="cd_unref" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="cds_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="cds_unref" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="c_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="c_unref" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="di_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="di_unref" />
+						<subs search="@type1@" replace="DOMImplementation" />
+					</implementation>
+				</function>
+				<function name="doc_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="doc_unref" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="dt_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="dt_unref" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="ent_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="ent_unref" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="er_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="er_unref" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="nnm_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="nnm_unref" />
+						<subs search="@type1@" replace="NamedNodeMap" />
+					</implementation>
+				</function>
+				<function name="nl_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="nl_unref" />
+						<subs search="@type1@" replace="NodeList" />
+					</implementation>
+				</function>
+				<function name="not_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="not_unref" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="pi_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="pi_unref" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="a_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="a_unref" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="str_unref">
+					<implementation>
+<![CDATA[
+private void f77xml__str_unref(code *o_ret, code *i_code1, error *o_err) { 
+	/* {{{ */
+	GdomeDOMString *obj1;
+	GdomeException exc;
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+
+	obj1 = f77xml_Cache_getDOMString(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	f77xml_Cache_removeDOMString(cache,obj1);
+
+	gdome_str_unref (obj1);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	/* }}} */
+}
+]]>
+					</implementation>
+				</function>
+				<function name="xpresult_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="xpresult_unref" />
+						<subs search="@type1@" replace="XPathResult" />
+					</implementation>
+				</function>
+				<function name="xpeval_unref">
+					<implementation template="p3t1_unref">
+						<subs search="@funcname@" replace="xpeval_unref" />
+						<subs search="@type1@" replace="XPathEvaluator" />
+					</implementation>
+				</function>
+				<function name="str_print">
+					<implementation>
+<![CDATA[
+private void f77xml__str_print(code *o_ret, code *i_code1, error *o_err) { 
+	/* {{{ */
+	GdomeDOMString *str;
+	GdomeException exc;
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+
+	str = f77xml_Cache_getDOMString(cache, *i_code1, o_err);
+	if (str == NULL) return;
+
+	*o_err = ERR_NO_ERROR;
+
+	printf("%s\n",str->str);
+
+	/* }}} */
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p3t2">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="StringObj *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="str_new">
+					<implementation>
+<![CDATA[
+private void f77xml__str_new(code *o_ret,
+				StringObj *i_string,
+				error *o_err) {
+	/* {{{ */
+	GdomeDOMString *domString;
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	*o_ret = NullCode;
+	*o_err = ERR_NEVER_RETURN_THIS;
+	
+	domString = gdome_str_mkref_dup(i_string->str);
+
+	*o_ret = f77xml_Cache_addDOMString(cache, (gpointer)domString);
+	/* }}} */
+
+}
+]]>
+					</implementation>
+				</function>
+				<function name="str_mkref">
+					<implementation>
+<![CDATA[
+private void f77xml__str_mkref(code *o_ret,
+				StringObj *i_string,
+				error *o_err) {
+	/* {{{ */
+	GdomeDOMString *domString;
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	*o_ret = NullCode;
+	*o_err = ERR_NEVER_RETURN_THIS;
+	
+	domString = gdome_str_mkref_dup(i_string->str);
+
+	*o_ret = f77xml_Cache_addDOMString(cache, (gpointer)domString);
+	/* }}} */
+
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p3t3">
+			<parameterList>
+				<return type="unsigned int *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="str_len">
+					<!-- XXX deprecated -->
+					<implementation>
+<![CDATA[
+private void f77xml__str_len( unsigned int *o_ret,
+				code *i_code1,
+				error *o_err) {
+	/* {{{ */
+	f77xml__str_length(o_ret,i_code1,o_err);
+	/* }}} */
+}
+]]>
+					</implementation>
+				</function>
+				<function name="str_length">
+					<implementation>
+<![CDATA[
+private void f77xml__str_length(unsigned int *o_ret,
+				code *i_code1,
+				error *o_err) {
+
+	/* {{{ */
+	GdomeDOMString *obj1;
+	Cache *cache;
+
+	cache = f77xml_Cache_instance();
+	*o_err = ERR_NEVER_RETURN_THIS;
+
+	obj1 = f77xml_Cache_getDOMString(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	*o_ret = gdome_str_length(obj1);
+	*o_err = ERR_NO_ERROR;
+	
+	/* }}} */
+
+}
+]]>
+					</implementation>
+				</function>
+				<function name="nl_length">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="nl_length" />
+						<subs search="@type1@" replace="NodeList" />
+					</implementation>
+				</function>
+				<function name="nnm_length">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="nnm_length" />
+						<subs search="@type1@" replace="NamedNodeMap" />
+					</implementation>
+				</function>
+				<function name="n_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="n_nodeType" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="er_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="er_nodeType" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="dt_nodeType" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="df_nodeType" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="pi_nodeType" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="cd_nodeType" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="not_nodeType" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="cds_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="cds_nodeType" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="a_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="a_nodeType" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="t_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="t_nodeType" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="el_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="el_nodeType" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="c_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="c_nodeType" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="ent_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="ent_nodeType" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="doc_nodeType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="doc_nodeType" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="c_length">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="c_length" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="t_length">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="t_length" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="cds_length">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="cds_length" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="cd_length">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="cd_length" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="xpresult_resultType">
+					<implementation template="p3t3_normal">
+						<subs search="@funcname@" replace="xpresult_resultType" />
+						<subs search="@type1@" replace="XPathResult" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p3t4">
+			<parameterList>
+				<return type="bool *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="el_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="el_hasChildNodes" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="er_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="er_hasChildNodes" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="dt_hasChildNodes" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="df_hasChildNodes" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="pi_hasChildNodes" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="cd_hasChildNodes" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="not_hasChildNodes" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="cds_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="cds_hasChildNodes" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="a_specified">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="a_specified" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="a_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="a_hasChildNodes" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="t_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="t_hasChildNodes" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="doc_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="doc_hasChildNodes" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="el_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="el_hasAttributes" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="er_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="er_hasAttributes" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+				<function name="dt_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="dt_hasAttributes" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="df_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="df_hasAttributes" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="pi_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="pi_hasAttributes" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="cd_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="cd_hasAttributes" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="not_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="not_hasAttributes" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="cds_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="cds_hasAttributes" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="a_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="a_hasAttributes" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="t_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="t_hasAttributes" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="doc_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="doc_hasAttributes" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="n_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="n_hasChildNodes" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="n_hasAttributes" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="c_hasAttributes" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="c_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="c_hasChildNodes" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="ent_hasChildNodes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="ent_hasChildNodes" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="ent_hasAttributes">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="ent_hasAttributes" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="xpresult_booleanValue">
+					<implementation template="p3t4_normal">
+						<subs search="@funcname@" replace="xpresult_booleanValue" />
+						<subs search="@type1@" replace="XPathResult" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p4t1">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="nnm_getNamedItem">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="nnm_getNamedItem" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="NamedNodeMap" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="nnm_setNamedItem">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="nnm_setNamedItem" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="NamedNodeMap" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="nnm_setNamedItemNS">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="nnm_setNamedItemNS" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="NamedNodeMap" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="nnm_removeNamedItem">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="nnm_removeNamedItem" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="NamedNodeMap" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="el_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="el_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="a_set_value">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="a_set_value" />
+						<subs search="@type1@" replace="Attr" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_createElement">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_createElement" />
+						<subs search="@returntype@" replace="Element" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+
+				<function name="doc_createTextNode">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_createTextNode" />
+						<subs search="@returntype@" replace="Text" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_createComment">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_createComment" />
+						<subs search="@returntype@" replace="Comment" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+
+				<function name="el_getAttribute">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="el_getAttribute" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+
+				<function name="el_removeAttribute">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="el_removeAttribute" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="el_getElementsByTagName">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="el_getElementsByTagName" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+
+				<function name="el_getAttributeNode">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="el_getAttributeNode" />
+						<subs search="@returntype@" replace="Attr" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+
+				<function name="el_setAttributeNode">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="el_setAttributeNode" />
+						<subs search="@returntype@" replace="Attr" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="Attr" />
+					</implementation>
+				</function>
+
+				<function name="el_removeAttributeNode">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="el_removeAttributeNode" />
+						<subs search="@returntype@" replace="Attr" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="Attr" />
+					</implementation>
+				</function>
+
+				<function name="el_setAttributeNodeNS">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="el_setAttributeNodeNS" />
+						<subs search="@returntype@" replace="Attr" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="el_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="el_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="er_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="er_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="dt_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="dt_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="df_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="df_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="pi_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="pi_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cd_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="cd_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="not_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="not_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cds_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="cds_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="doc_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="a_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="a_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="er_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="er_set_prefix" />
+						<subs search="@type1@" replace="EntityReference" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="el_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="el_set_prefix" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="dt_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="dt_set_prefix" />
+						<subs search="@type1@" replace="DocumentType" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="df_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="df_set_prefix" />
+						<subs search="@type1@" replace="DocumentFragment" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="pi_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="pi_set_prefix" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cd_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="cd_set_prefix" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="not_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="not_set_prefix" />
+						<subs search="@type1@" replace="Notation" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cds_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="cds_set_prefix" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="a_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="a_set_prefix" />
+						<subs search="@type1@" replace="Attr" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="el_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="el_set_nodeValue" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="er_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="er_set_nodeValue" />
+						<subs search="@type1@" replace="EntityReference" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="dt_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="dt_set_nodeValue" />
+						<subs search="@type1@" replace="DocumentType" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="df_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="df_set_nodeValue" />
+						<subs search="@type1@" replace="DocumentFragment" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cd_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="cd_set_nodeValue" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="a_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="a_set_nodeValue" />
+						<subs search="@type1@" replace="Attr" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="doc_set_nodeValue" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="n_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="n_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="er_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="er_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="dt_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="dt_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="df_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="df_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="pi_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="pi_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cd_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="cd_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="not_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="not_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cds_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="cds_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="a_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="a_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="doc_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="t_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="t_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="n_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="t_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="t_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="n_set_prefix" />
+						<subs search="@type1@" replace="Node" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="doc_set_prefix" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="n_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="n_set_nodeValue" />
+						<subs search="@type1@" replace="Node" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="not_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="not_set_nodeValue" />
+						<subs search="@type1@" replace="Notation" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="c_set_data">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="c_set_data" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="pi_set_data">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="pi_set_data" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cd_set_data">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="cd_set_data" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cds_set_data">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="cds_set_data" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="t_set_data">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="t_set_data" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="c_appendData">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="c_appendData" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cd_appendData">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="cd_appendData" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cds_appendData">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="cds_appendData" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="t_appendData">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="t_appendData" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="c_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="c_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="c_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="c_set_nodeValue" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="pi_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="pi_set_nodeValue" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cds_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="cds_set_nodeValue" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="c_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="c_set_prefix" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="t_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="t_set_nodeValue" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="t_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="t_set_prefix" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_createCDATASection">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_createCDATASection" />
+						<subs search="@returntype@" replace="CDATASection" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_createAttribute">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_createAttribute" />
+						<subs search="@returntype@" replace="Attr" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_createEntityReference">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_createEntityReference" />
+						<subs search="@returntype@" replace="EntityReference" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_getElementsByTagName">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_getElementsByTagName" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="ent_set_nodeValue">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="ent_set_nodeValue" />
+						<subs search="@type1@" replace="Entity" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="ent_removeChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="ent_removeChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="ent_appendChild">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="ent_appendChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="ent_set_prefix">
+					<implementation template="p4t1_void">
+						<subs search="@funcname@" replace="ent_set_prefix" />
+						<subs search="@type1@" replace="Entity" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_getElementById">
+					<implementation template="p4t1_normal">
+						<subs search="@funcname@" replace="doc_getElementById" />
+						<subs search="@returntype@" replace="Element" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p4t2">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="unsigned int *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="nl_item">
+					<implementation template="p4t2_normal">
+						<subs search="@funcname@" replace="nl_item" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="NodeList" />
+					</implementation>
+				</function>
+				<function name="nnm_item">
+					<implementation template="p4t2_normal">
+						<subs search="@funcname@" replace="nnm_item" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="NamedNodeMap" />
+					</implementation>
+				</function>
+				<function name="t_splitText">
+					<implementation template="p4t2_normal">
+						<subs search="@funcname@" replace="t_splitText" />
+						<subs search="@returntype@" replace="Text" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="cds_splitText">
+					<implementation template="p4t2_normal">
+						<subs search="@funcname@" replace="cds_splitText" />
+						<subs search="@returntype@" replace="Text" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+		
+		<sign type="p4t3">
+			<parameterList>
+				<return type="bool *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="el_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="el_canAppend" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="er_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="er_canAppend" />
+						<subs search="@type1@" replace="EntityReference" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="dt_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="dt_canAppend" />
+						<subs search="@type1@" replace="DocumentType" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="df_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="df_canAppend" />
+						<subs search="@type1@" replace="DocumentFragment" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="pi_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="pi_canAppend" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cd_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="cd_canAppend" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="not_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="not_canAppend" />
+						<subs search="@type1@" replace="Notation" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cds_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="cds_canAppend" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="a_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="a_canAppend" />
+						<subs search="@type1@" replace="Attr" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="t_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="t_canAppend" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="doc_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="doc_canAppend" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="n_canAppend" />
+						<subs search="@type1@" replace="Node" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="c_canAppend" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="ent_canAppend">
+					<implementation template="p4t3_normal">
+						<subs search="@funcname@" replace="ent_canAppend" />
+						<subs search="@type1@" replace="Entity" />
+						<subs search="@type2@" replace="Node" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+
+		<sign type="p4t4">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="bool *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="el_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="el_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+					</implementation>
+				</function>
+				<function name="n_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="n_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="c_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="doc_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="doc_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+					</implementation>
+				</function>
+				<function name="t_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="t_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="a_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="a_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+					</implementation>
+				</function>
+				<function name="cds_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="cds_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="cd_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="cd_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="pi_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="pi_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+					</implementation>
+				</function>
+				<function name="df_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="df_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+					</implementation>
+				</function>
+				<function name="not_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="not_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+					</implementation>
+				</function>
+				<function name="dt_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="dt_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+					</implementation>
+				</function>
+				<function name="ent_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="ent_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+					</implementation>
+				</function>
+				<function name="er_cloneNode">
+					<implementation template="p4t4_normal">
+						<subs search="@funcname@" replace="er_cloneNode" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+
+		<sign type="p4t5">
+			<parameterList>
+				<return type="bool *" />
+				<parameter type="code *" />
+				<parameter type="StringObj *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="str_equal">
+					<implementation>
+<![CDATA[
+void f77xml__str_equal(bool *o_ret,
+			code *i_code,
+			StringObj *i_string,
+			error *o_err) {
+
+	GdomeDOMString *str;
+	GdomeException exc;
+	Cache *cache;
+	
+	cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	
+	str = f77xml_Cache_getDOMString(cache, *i_code, o_err);
+	if (str == NULL) return;
+
+	*o_ret = (strcmp(str->str,i_string->str) ? false : true);
+	*o_err = ERR_NO_ERROR;
+
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p5t1">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="nnm_getNamedItemNS">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="nnm_getNamedItemNS" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="NamedNodeMap" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="nnm_removeNamedItemNS">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="nnm_removeNamedItemNS" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="NamedNodeMap" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="el_setAttribute">
+					<implementation template="p5t1_void">
+						<subs search="@funcname@" replace="el_setAttribute" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+
+				<function name="doc_createElementNS">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="doc_createElementNS" />
+						<subs search="@returntype@" replace="Element" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_createAttributeNS">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="doc_createAttributeNS" />
+						<subs search="@returntype@" replace="Attr" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="doc_getElementsByTagNameNS">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="doc_getElementsByTagNameNS" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="el_getAttributeNS">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="el_getAttributeNS" />
+						<subs search="@returntype@" replace="DOMString" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="el_getAttributeNodeNS">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="el_getAttributeNodeNS" />
+						<subs search="@returntype@" replace="Attr" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="el_getElementsByTagNameNS">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="el_getElementsByTagNameNS" />
+						<subs search="@returntype@" replace="NodeList" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="el_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="el_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="er_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="er_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="dt_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="dt_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="df_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="df_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="pi_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="pi_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cd_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="cd_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="not_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="not_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="el_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="el_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="er_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="er_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="EntityReference" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="dt_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="dt_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentType" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="df_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="df_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="DocumentFragment" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="pi_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="pi_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="ProcessingInstruction" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cd_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="cd_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="not_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="not_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Notation" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cds_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="cds_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="cds_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="cds_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="t_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="t_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="t_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="t_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="doc_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="doc_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="doc_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="doc_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="n_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="n_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="n_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Node" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="c_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="c_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="c_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="doc_createProcessingInstruction">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="doc_createProcessingInstruction" />
+						<subs search="@returntype@" replace="ProcessingInstruction" />
+						<subs search="@type1@" replace="Document" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="ent_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="ent_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="ent_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="ent_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Entity" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="a_insertBefore">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="a_insertBefore" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="a_replaceChild">
+					<implementation template="p5t1_normal">
+						<subs search="@funcname@" replace="a_replaceChild" />
+						<subs search="@returntype@" replace="Node" />
+						<subs search="@type1@" replace="Attr" />
+						<subs search="@type2@" replace="Node" />
+						<subs search="@type3@" replace="Node" />
+					</implementation>
+				</function>
+				<function name="el_removeAttributeNS">
+					<implementation template="p5t1_void">
+						<subs search="@funcname@" replace="el_removeAttributeNS" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+						<subs search="@type4@" replace="DOMString" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p5t2">
+			<parameterList>
+				<return type="bool *" />
+				<parameter type="code *" />
+				<parameter type="StringObj *" />
+				<parameter type="unsigned int *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="str_toFortran">
+					<implementation>
+<![CDATA[
+void f77xml__str_toFortran(bool *o_bool,
+			code *i_code,
+			StringObj *o_string,
+			unsigned int *i_offset,
+			error *o_err) {
+
+	unsigned int len,off;
+
+	GdomeDOMString *str;
+	GdomeException exc;
+	Cache *cache;
+	
+	cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_bool = true;
+	
+	str = f77xml_Cache_getDOMString(cache, *i_code, o_err);
+	if (str == NULL) return;
+
+	len = gdome_str_length(str);
+	off = *i_offset;
+
+	if (off >= len) off = len;
+
+	f77xml_StringObj_set(o_string, str->str+off);
+	
+	if (f77xml_StringObj_size(o_string)+off < len) *o_bool = false;
+	else *o_bool = true;
+
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p5t3">
+			<parameterList>
+				<return type="bool *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="el_hasAttributeNS">
+					<implementation template="p5t3_normal">
+						<subs search="@funcname@" replace="el_hasAttributeNS" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p5t4">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="unsigned int *" />
+				<parameter type="unsigned int *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="c_deleteData">
+					<implementation template="p5t4_void">
+						<subs search="@funcname@" replace="c_deleteData" />
+						<subs search="@type1@" replace="Comment" />
+					</implementation>
+				</function>
+				<function name="t_deleteData">
+					<implementation template="p5t4_void">
+						<subs search="@funcname@" replace="t_deleteData" />
+						<subs search="@type1@" replace="Text" />
+					</implementation>
+				</function>
+				<function name="cds_deleteData">
+					<implementation template="p5t4_void">
+						<subs search="@funcname@" replace="cds_deleteData" />
+						<subs search="@type1@" replace="CDATASection" />
+					</implementation>
+				</function>
+				<function name="cd_deleteData">
+					<implementation template="p5t4_void">
+						<subs search="@funcname@" replace="cd_deleteData" />
+						<subs search="@type1@" replace="CharacterData" />
+					</implementation>
+				</function>
+				<function name="c_substringData">
+					<implementation template="p5t4_normal">
+						<subs search="@funcname@" replace="c_substringData" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@returntype@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="t_substringData">
+					<implementation template="p5t4_normal">
+						<subs search="@funcname@" replace="t_substringData" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@returntype@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cds_substringData">
+					<implementation template="p5t4_normal">
+						<subs search="@funcname@" replace="cds_substringData" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@returntype@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cd_substringData">
+					<implementation template="p5t4_normal">
+						<subs search="@funcname@" replace="cd_substringData" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@returntype@" replace="DOMString" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p5t5">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="StringObj *" />
+				<parameter type="unsigned int *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="di_createDocFromURI">
+					<implementation>
+<![CDATA[
+void f77xml__di_createDocFromURI(code *o_ret,
+			code *i_di,
+			StringObj *i_uri,
+			unsigned int *i_mode,
+			error *o_err) {
+
+	GdomeDOMImplementation *di;
+	GdomeDocument *doc;
+	GdomeException exc;
+	Cache *cache;
+	
+	cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+	
+	di = f77xml_Cache_getDOMImplementation(cache, *i_di, o_err);
+	if (di == NULL) return;
+
+	doc = gdome_di_createDocFromURI(di,i_uri->str,*i_mode,&exc);
+
+	if (exc) {
+		assert ( doc == NULL );
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+	*o_ret = f77xml_Cache_addDocument(cache, (gpointer)doc);
+
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p5t6">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="unsigned int *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="c_insertData">
+					<implementation template="p5t6_void">
+						<subs search="@funcname@" replace="c_insertData" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="t_insertData">
+					<implementation template="p5t6_void">
+						<subs search="@funcname@" replace="t_insertData" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cds_insertData">
+					<implementation template="p5t6_void">
+						<subs search="@funcname@" replace="cds_insertData" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cd_insertData">
+					<implementation template="p5t6_void">
+						<subs search="@funcname@" replace="cd_insertData" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p5t7">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="bool *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="doc_importNode">
+					<implementation>
+<![CDATA[
+private void f77xml__doc_importNode(code *o_ret,
+				code *i_code1,
+				code *i_code2,
+				bool *i_bool1,
+				error *o_err) {
+
+	/* {{{ OK */
+	GdomeDocument *obj1;
+	GdomeNode *obj2;
+	GdomeNode *ret;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+	*o_err = ERR_NEVER_RETURN_THIS;
+
+	obj1 = f77xml_Cache_getDocument(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+
+	obj2 = f77xml_Cache_getNode(cache, *i_code2, o_err);
+	if (obj2 == NULL) return;
+
+	ret = gdome_doc_importNode(obj1,obj2,*i_bool1,&exc);
+
+	if (exc) {
+		assert (ret == NULL);
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_addNode(cache, (gpointer)ret);
+
+	/* }}} */
+
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p6t1">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="el_setAttributeNS">
+					<implementation template="p6t1_void">
+						<subs search="@funcname@" replace="el_setAttributeNS" />
+						<subs search="@type1@" replace="Element" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+						<subs search="@type4@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="di_createDocumentType">
+					<implementation template="p6t1_normal">
+						<subs search="@funcname@" replace="di_createDocumentType" />
+						<subs search="@returntype@" replace="DocumentType" />
+						<subs search="@type1@" replace="DOMImplementation" />
+						<subs search="@type2@" replace="DOMString" />
+						<subs search="@type3@" replace="DOMString" />
+						<subs search="@type4@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="di_createDocument">
+					<implementation>
+<![CDATA[
+static void f77xml__di_createDocument(code *o_ret,
+			code *i_code1,
+			code *i_code2,
+			code *i_code3,
+			code *i_code4,
+			error *o_err) { 
+	/* {{{ OK */
+	GdomeDocument *ret;
+	GdomeDOMImplementation *obj1;
+	GdomeDOMString *obj2;
+	GdomeDOMString *obj3;
+	GdomeDocumentType *obj4;
+	GdomeException exc;
+
+	Cache *cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+	
+	obj1 = f77xml_Cache_getDOMImplementation(cache, *i_code1, o_err);
+	if (obj1 == NULL) return;
+	
+	obj2 = f77xml_Cache_getDOMString(cache, *i_code2, o_err);
+	if (obj2 == NULL) {
+		if (*o_err != ERR_NULL_CODE) return;
+		*o_err = ERR_NO_ERROR;
+	}
+
+	obj3 = f77xml_Cache_getDOMString(cache, *i_code3, o_err);
+	if (obj3 == NULL) return;
+
+	obj4 = f77xml_Cache_getDocumentType(cache, *i_code4, o_err);
+	if (obj4 == NULL) {
+		if (*o_err != ERR_NULL_CODE) return;
+		*o_err = ERR_NO_ERROR;
+	}
+
+	ret = gdome_di_createDocument(obj1,obj2,obj3,obj4,&exc);
+	
+	if (exc) {
+		assert (ret == NULL);
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_addDocument(cache, (gpointer)ret);
+
+	/* }}} */
+
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p6t2">
+			<parameterList>
+				<return type="bool *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="StringObj *" />
+				<parameter type="unsigned int *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="di_saveDocToFile">
+					<implementation>
+<![CDATA[
+void f77xml__di_saveDocToFile(bool *o_ret,
+			code *i_di,
+			code *i_doc,
+			StringObj *i_uri,
+			unsigned int *i_mode,
+			error *o_err) {
+	/* {{{ */
+	GdomeDOMImplementation *di;
+	GdomeDocument *doc;
+	GdomeException exc;
+	Cache *cache;
+	
+	cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = false;
+	
+	di = f77xml_Cache_getDOMImplementation(cache, *i_di, o_err);
+	if (di == NULL) return;
+
+	doc = f77xml_Cache_getDocument(cache, *i_doc, o_err);
+	if (doc == NULL) return;
+
+	*o_ret = gdome_di_saveDocToFile(di,doc,i_uri->str,*i_mode,&exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+	
+	*o_err = ERR_NO_ERROR;
+	/* }}} */
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+		<sign type="p6t3">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="unsigned int *" />
+				<parameter type="unsigned int *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="c_replaceData">
+					<implementation template="p6t3_void">
+						<subs search="@funcname@" replace="c_replaceData" />
+						<subs search="@type1@" replace="Comment" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="t_replaceData">
+					<implementation template="p6t3_void">
+						<subs search="@funcname@" replace="t_replaceData" />
+						<subs search="@type1@" replace="Text" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cds_replaceData">
+					<implementation template="p6t3_void">
+						<subs search="@funcname@" replace="cds_replaceData" />
+						<subs search="@type1@" replace="CDATASection" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+				<function name="cd_replaceData">
+					<implementation template="p6t3_void">
+						<subs search="@funcname@" replace="cd_replaceData" />
+						<subs search="@type1@" replace="CharacterData" />
+						<subs search="@type2@" replace="DOMString" />
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+		<sign type="p8t1">
+			<parameterList>
+				<return type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="code *" />
+				<parameter type="unsigned int *" />
+				<parameter type="code *" />
+				<parameter type="error *" />
+			</parameterList>
+			<functionList>
+				<function name="xpeval_evaluate">
+					<implementation>
+<![CDATA[
+void f77xml__xpeval_evaluate(code *o_ret,
+			code *i_eval,
+			code *i_str,
+			code *i_node,
+			code *i_xpnsresolv,
+			unsigned int *i_type,
+			code *i_xpres,
+			error *o_err) {
+	/* {{{ */ 
+	GdomeXPathResult *ret;
+	GdomeXPathEvaluator *eval;
+	GdomeDOMString *str;
+	GdomeNode *node;
+	GdomeXPathNSResolver *xpnsresolv;
+	GdomeXPathResult *xpres;
+	GdomeException exc;
+	Cache *cache;
+	
+	cache = f77xml_Cache_instance();
+
+	*o_err = ERR_NEVER_RETURN_THIS;
+	*o_ret = NullCode;
+	
+	eval = f77xml_Cache_getXPathEvaluator(cache, *i_eval, o_err);
+	if (eval == NULL) return;
+
+	str = f77xml_Cache_getDOMString(cache, *i_str, o_err);
+	if (str == NULL) return;
+
+	node = f77xml_Cache_getNode(cache, *i_node, o_err);
+	if (node == NULL) return;
+
+	xpnsresolv = f77xml_Cache_getXPathNSResolver(cache, *i_xpnsresolv, o_err);
+	if (xpnsresolv == NULL) {
+		if (*o_err != ERR_NULL_CODE) return;
+		*o_err = ERR_NO_ERROR;
+	}
+
+	xpres = f77xml_Cache_getXPathResult(cache, *i_xpres, o_err);
+	if (xpres == NULL) {
+		if (*o_err != ERR_NULL_CODE) return;
+		*o_err = ERR_NO_ERROR;
+	}
+
+	ret = gdome_xpeval_evaluate(eval,str,node,xpnsresolv,*i_type,xpres,&exc);
+
+	if (exc) {
+		*o_err = ERR_GDOME;
+		return;
+	}
+
+	*o_err = ERR_NO_ERROR;
+
+	if (ret == NULL) {
+		*o_ret = NullCode;
+		return;
+	}
+
+	*o_ret = f77xml_Cache_addXPathResult(cache, (gpointer)ret);
+	
+	/* }}} */
+		
+}
+]]>
+					</implementation>
+				</function>
+			</functionList>
+		</sign>
+
+	</signatures>
+</apigen>
+

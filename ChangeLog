@@ -1,0 +1,53 @@
+2004-09-10 Stefano Borini <munehiro@ferrara.linux.it>
+	* Completely rewritten the API. Now it complies with DOM level2
+	  standards (except for events)
+	* released as 1.0 beta
+
+2004-03-21 Stefano Borini <munehiro@ferrara.linux.it>
+	* added Element::parentNode
+	* added Document::createElementNS
+	* tagged as v0_4_0
+	* public release as v0.4.0
+
+2004-03-21 Stefano Borini <munehiro@ferrara.linux.it>
+	* Cache now do an assert on the introduction of the same pointer
+	  with addPointer. This is a quick fix (not particularly elegant,
+	  i know) for giving back always the same object code when the 
+	  same object is referenced. The Cache clients _must_ check 
+	  if the pointer is already present before feeding it to the cache
+	  and eventually free the allocated resource. A future release will
+	  include reference counting, thus freeing the clients from this check
+	  and enforcing a transparent usage.
+	* Simplified PointerType. There's no need for child of Type_GdomeNode,
+	  since we can use the virtualized destructor of Node for each child
+	* f77xml_Cache_query marked as deprecated in favour of queryPointer
+	* added f77xml_Cache_queryCode
+	* defined NullCode
+	* added test5
+	* tagged as v0_3_4
+
+2004-03-13 Stefano Borini <munehiro@ferrara.linux.it>
+	* Added autoconf/make/libtool stuff
+	* moved src directory to libf77xml
+	* tagged as v0_3_3
+
+v0_3_2 Stefano Borini <munehiro@ferrara.linux.it>
+	* fixed offset in xp4t1
+	* moved signature for xp4t1 from c,soe to the correct co,se
+	* implemented el_getAttribute under p5t1
+	* added test4 to get and set attributes
+	* added Document::createComment
+
+v0_3_1: Stefano Borini <munehiro@ferrara.linux.it>
+	* fixes for initial public release
+
+v0_3: Stefano Borini <munehiro@ferrara.linux.it>
+	* created apigen.py and apigen.xml. Now the multiplexer are automatically
+	produced by this script. Other cleanups. 
+
+v0_2: Stefano Borini <munehiro@ferrara.linux.it>
+	* cleaned up API. added El::setAttribute, Doc::documentElement,
+	Doc::createElement, El:appendChild
+
+v0_1: Stefano Borini <munehiro@ferrara.linux.it>
+	* first release. only firstChild

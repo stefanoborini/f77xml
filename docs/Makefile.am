@@ -1,0 +1,1 @@
+EXTRA_DIST=f77xml_documentation.pdf  f77xml_documentation.sxw signatures

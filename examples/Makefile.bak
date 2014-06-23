@@ -1,0 +1,49 @@
+NULL =
+
+noinst_PROGRAMS =		\
+        examplea		\
+        exampleb		\
+        examplec		\
+        bench			\
+        $(NULL)
+
+INCLUDES = -I$(srcdir)
+DEPS = $(top_builddir)/libf77xml/libf77xml.la
+LDADDS = $(top_builddir)/libf77xml/libf77xml.la $(GDOME2_LIBS) $(LIBXML_LIBS) $(GLIB_LIBS)
+
+examplea_SOURCES = examplea.f90
+examplea_DEPENDENCIES = $(DEPS)
+examplea_LDADD = $(LDADDS)
+
+exampleb_SOURCES = exampleb.f90
+exampleb_DEPENDENCIES = $(DEPS)
+exampleb_LDADD = $(LDADDS)
+
+examplec_SOURCES = examplec.f90
+examplec_DEPENDENCIES = $(DEPS)
+examplec_LDADD = $(LDADDS)
+
+bench_SOURCES = bench.f90
+bench_DEPENDENCIES = $(DEPS)
+bench_LDADD = $(LDADDS)
+
+EXTRA_DIST =				\
+	exampleb.xml			\
+	examplec.xml			\
+	$(NULL)
+
+TESTS_ENVIROMENT = 					\
+	LD_LIBRARY_PATH=$(top_builddir)/libf77xml/	\
+        $(NULL)
+        
+#TESTS =		 		\
+#        examplea		\
+#        exampleb		\
+#        examplec		\
+#        bench \
+#        $(NULL)
+
+LTFCCOMPILE=$(LIBTOOL) --tag=F77 --mode=compile $(FC) $(AM_FCFLAGS) $(FCFLAGS)
+FCLINK = $(LIBTOOL) --tag=F77 --mode=link $(FCLD) $(AM_FCFLAGS) $(FCFLAGS) \
+    $(AM_LDFLAGS) $(LDFLAGS) -o $@
+

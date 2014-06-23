@@ -1,0 +1,104 @@
+autoscan: warning: missing AC_CHECK_FUNCS([bzero]) wanted by: 
+	libf77xml/stringobj.c:8
+	libf77xml/stringobj.c:22
+	libf77xml/stringobj.c:50
+autoscan: warning: missing AC_CHECK_FUNCS([memchr]) wanted by: 
+	libf77xml/cfortran.h:2029
+autoscan: warning: missing AC_CHECK_FUNCS([memmove]) wanted by: 
+	libf77xml/f77backend.c:51
+	libf77xml/f77backend.c:193
+	libf77xml/f77backend.c:260
+	libf77xml/f77backend.c:348
+autoscan: warning: missing AC_CHECK_FUNCS([memset]) wanted by: 
+	libf77xml/cfortran.h:1481
+	libf77xml/cfortran.h:1487
+	libf77xml/cfortran.h:1493
+	libf77xml/cfortran.h:1670
+	libf77xml/cfortran.h:1674
+	libf77xml/cfortran.h:1678
+	libf77xml/cfortran.h:1680
+	libf77xml/cfortran.h:2064
+	libf77xml/cfortran.h:2155
+	libf77xml/cfortran.h:2162
+	libf77xml/cfortran.h:2166
+autoscan: warning: missing AC_CHECK_HEADERS([malloc.h]) wanted by: 
+	libf77xml/cfortran.h:58
+autoscan: warning: missing AC_C_CONST wanted by: 
+	libf77xml/f77backend.c:8
+	libf77xml/f77backend.c:20
+	libf77xml/f77backend.c:34
+	libf77xml/f77backend.c:35
+	libf77xml/f77backend.c:59
+	libf77xml/f77backend.c:73
+	libf77xml/f77backend.c:87
+	libf77xml/f77backend.c:105
+	libf77xml/f77backend.c:123
+	libf77xml/f77backend.c:138
+	libf77xml/f77backend.c:153
+	libf77xml/f77backend.c:172
+	libf77xml/f77backend.c:174
+	libf77xml/f77backend.c:201
+	libf77xml/f77backend.c:220
+	libf77xml/f77backend.c:239
+	libf77xml/f77backend.c:241
+	libf77xml/f77backend.c:268
+	libf77xml/f77backend.c:287
+	libf77xml/f77backend.c:307
+	libf77xml/f77backend.c:328
+	libf77xml/f77backend.c:331
+	libf77xml/f77backend.c:356
+	libf77xml/f77interface.c:8
+	libf77xml/f77interface.c:11
+	libf77xml/f77interface.c:15
+	libf77xml/f77interface.c:15
+	libf77xml/f77interface.c:19
+	libf77xml/f77interface.c:23
+	libf77xml/f77interface.c:27
+	libf77xml/f77interface.c:31
+	libf77xml/f77interface.c:35
+	libf77xml/f77interface.c:39
+	libf77xml/f77interface.c:43
+	libf77xml/f77interface.c:47
+	libf77xml/f77interface.c:47
+	libf77xml/f77interface.c:51
+	libf77xml/f77interface.c:55
+	libf77xml/f77interface.c:59
+	libf77xml/f77interface.c:59
+	libf77xml/f77interface.c:63
+	libf77xml/f77interface.c:67
+	libf77xml/f77interface.c:71
+	libf77xml/f77interface.c:75
+	libf77xml/f77interface.c:75
+	libf77xml/f77interface.c:79
+	libf77xml/stringobj.c:20
+	libf77xml/stringobj.h:11
+autoscan: warning: missing AC_FUNC_MALLOC wanted by: 
+	libf77xml/cache.c:29
+	libf77xml/domimpl.c:9
+	libf77xml/pointerref.c:10
+	libf77xml/stringobj.c:6
+	libf77xml/stringobj.c:7
+autoscan: warning: missing AC_PROG_CXX wanted by: 
+	ltmain.sh:2562
+	ltmain.sh:2597
+	ltmain.sh:3503
+	ltmain.sh:3504
+autoscan: warning: missing AC_PROG_RANLIB wanted by: 
+	ltmain.sh:5102
+	Makefile.in:76
+	test/Makefile.in:76
+	test/test9/Makefile.in:76
+	test/test7/Makefile.in:76
+	test/test6/Makefile.in:76
+	test/test5/Makefile.in:76
+	test/test4/Makefile.in:76
+	test/test3/Makefile.in:76
+	test/test2/Makefile.in:76
+	test/test1/Makefile.in:76
+	test/test8/Makefile.in:76
+	test/.old/test7/Makefile.in:88
+	test/.old/test6/Makefile.in:88
+	test/.old/test5/Makefile.in:88
+	test/.old/test4/Makefile.in:88
+	test/.old/test3/Makefile.in:88
+	libf77xml/Makefile.in:76
