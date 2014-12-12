@@ -12,6 +12,10 @@
 # all the internet to laugh at me, but i don't care. With 
 # python I feel as comfortable as an elephant dressing a pair 
 # of blue jeans.
+# 
+# Dear Stefano from 2004. Here is Stefano from 2014.
+# You are an idiot.
+# Sincerely.
 
 import sys
 import xml.dom.minidom
